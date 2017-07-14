@@ -1,6 +1,6 @@
 describe('BogoSort', () => {
   it('Should accept an array', () => {
-    expect(BogoSortR, []).not.toThrow();
+    expect(() => { BogoSortR([]) }).not.toThrow();
   });
 
   it('should sort an array of numbers', () => {
