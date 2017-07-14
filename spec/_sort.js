@@ -20,14 +20,14 @@ describe('BogoSort', () => {
   it('should return an array', () => {
     const input = [];
     const output = BogoSortR(input);
-    expect(output instanceof Array).to.be(true);
+    expect(output instanceof Array).toBe(true);
   });
 
   describe('Returned array', () => {
     it('should be same length as input', () => {
       const input = [1, 1, 3, 6, 0];
       const output = BogoSortR(input);
-      expect(output.length).to.equal(input.length);
+      expect(output.length).toEqual(input.length);
     });
   });
 });
