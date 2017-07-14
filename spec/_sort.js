@@ -1,5 +1,5 @@
-describe('Your sorting algo', () => {
-  it('should be truthy', () => {
-    expect(true).toBeTruthy();
+describe('BogoSort', () => {
+  it('Should accept an array', () => {
+    expect(BogoSortR([])).not.to.throw;
   });
 });
