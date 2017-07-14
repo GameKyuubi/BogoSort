@@ -16,4 +16,10 @@ describe('BogoSort', () => {
     const result = BogoSortR(unsortedArray);
     expect(result).toEqual(sortedArray);
   });
+
+  it('should return an array', () => {
+    const input = [];
+    const output = BogoSortR(input);
+    expect(output instanceof Array).to.be(true);
+  });
 });
