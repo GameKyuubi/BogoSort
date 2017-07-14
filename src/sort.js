@@ -1,5 +1,12 @@
 function BogoSortR(array) {
+  let _array = array.slice();
   let sortedArray = [];
+  let tempArray = _array.slice();
+
+  while(!checkSort(tempArray)) {
+    tempArray = _array.slice();
+    tempArray = randomize(tempArray);
+  }
 
   function randomize(array) {
     let oldArray = array.slice();
