@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "jquery": "^3.2.1",
-    "jasmine-core": "jasmine#^2.6.4"
+    "jasmine-core": "jasmine#^2.6.4",
+    "lodash": "^4.17.4"
   }
 }
