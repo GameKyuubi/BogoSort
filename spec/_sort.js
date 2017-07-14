@@ -22,4 +22,12 @@ describe('BogoSort', () => {
     const output = BogoSortR(input);
     expect(output instanceof Array).to.be(true);
   });
+
+  describe('Returned array', () => {
+    it('should be same length as input', () => {
+      const input = [1, 1, 3, 6, 0];
+      const output = BogoSortR(input);
+      expect(output.length).to.equal(input.length);
+    });
+  });
 });
