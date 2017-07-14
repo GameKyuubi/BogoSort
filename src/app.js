@@ -6,7 +6,7 @@ for(let i = 0; i < 4; i++) {
 var $container = $('.container');
 
 _.each(list, function(id) {
-  var $div = $('<div></div>');
+  var $div = $('<div>' + id + '</div>');
   $div.attr('id', id).addClass('number');
   $container.append($div);
 });
