@@ -9,4 +9,11 @@ describe('BogoSort', () => {
     const result = BogoSortR(unsortedArray);
     expect(result).toEqual(sortedArray);
   });
+
+  it('should work with negative numbers', () => {
+    const unsortedArray = [-9, 5, 2, 8, -30];
+    const sortedArray = [-30, -9, 2, 5, 8];
+    const result = BogoSortR(unsortedArray);
+    expect(result).toEqual(sortedArray);
+  });
 });
