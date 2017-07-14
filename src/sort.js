@@ -3,4 +3,3 @@ function BogoSortR(array) {
 
   return sortedArray;
 }
-console.log('sort this!');
