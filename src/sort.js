@@ -11,5 +11,14 @@ function BogoSortR(array) {
     return newArray;
   }
 
+  function checkSort(array) {
+    for(let i = 0; i < array.length - 1; i++) { // if this succeeds to the end - 1 of the array, the last element has already been checked
+      if(!(array[i] <= array[i + 1])) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   return tempArray;
 }
