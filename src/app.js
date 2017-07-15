@@ -36,6 +36,8 @@ if(message.data.hasOwnProperty('update')) {
 				});
 		var $trailContainer = $('.trail-container');
 		$trailContainer.prepend($container);
+    $counter = $('.counter');
+    $counter.text('Attempts: ' + message.data['count']);
 	} else {
 		yakety.pause();
 		var mail = new Audio('mail.mp3');

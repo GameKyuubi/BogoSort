@@ -1,14 +1,16 @@
 function BogoSortR2(array) {
   let sortedArray = [];
   let tempArray = array.slice();
-  let intervalCounter = 0;
+  let count = 0;
   let sorted = false;
 
   while(!sorted) {
+    count++;
     tempArray = array.slice();
     tempArray = randomize(tempArray);
     postMessage({
-      'update': tempArray
+      'update': tempArray,
+      'count': count
     });
     sorted = checkSort(tempArray);
   }
