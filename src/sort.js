@@ -7,7 +7,6 @@ function BogoSortR2(array) {
   while(!sorted) {
     tempArray = array.slice();
     tempArray = randomize(tempArray);
-    console.log('Array attempt: ' + tempArray);
     postMessage({
       'update': tempArray
     });
