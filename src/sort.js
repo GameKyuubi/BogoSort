@@ -29,21 +29,19 @@ function BogoSortR(array) {
   return tempArray;
 }
 
-function BogoSortR2(array, update, interval, finish) {
+async function BogoSortR2(array, update, interval, finish) {
   let sortedArray = [];
   let tempArray = array.slice();
   let intervalCounter = 0;
+  let sorted = false;
+  //setInterval(() => { update(tempArray); }, 500);
 
-  while(!checkSort(tempArray)) {
+  while(!sorted) {
     tempArray = array.slice();
     tempArray = randomize(tempArray);
-    console.log(tempArray);
-    if(intervalCounter <= interval)
-      intervalCounter++;
-    else {
-      setTimeout(update(tempArray), 100);
-      intervalCounter = 0;
-    }
+    update(tempArray);
+    //console.log(tempArray);
+    sorted = checkSort(tempArray);
   }
 
   function randomize(array) {
