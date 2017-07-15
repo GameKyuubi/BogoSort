@@ -1,5 +1,5 @@
 var unsortedList = [];
-for(let i = 0; i < 6; i++) {
+for(let i = 0; i < 7; i++) {
   unsortedList.push(Math.floor(Math.random() * 255));
 }
 
