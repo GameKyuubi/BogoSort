@@ -35,4 +35,6 @@ worker.onmessage = function(list) {
   $trailContainer.prepend($container);
 };
 
+var mail = new Audio('yakety.mp3');
+mail.play();
 worker.postMessage(unsortedList);

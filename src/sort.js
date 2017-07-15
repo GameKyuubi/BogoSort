@@ -1,5 +1,3 @@
-importScripts('../bower_components/jquery/dist/jquery.js');
-
 function BogoSortR2(array) {
   let sortedArray = [];
   let tempArray = array.slice();
@@ -33,7 +31,6 @@ function BogoSortR2(array) {
     return true;
   }
 
-  $.playSound('../mail.mp3');
   return tempArray;
 }
 
