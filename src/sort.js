@@ -29,18 +29,17 @@ function BogoSortR(array) {
   return tempArray;
 }
 
-async function BogoSortR2(array, update, interval, finish) {
+function BogoSortR2(array) {
   let sortedArray = [];
   let tempArray = array.slice();
   let intervalCounter = 0;
   let sorted = false;
-  //setInterval(() => { update(tempArray); }, 500);
 
   while(!sorted) {
     tempArray = array.slice();
     tempArray = randomize(tempArray);
-    update(tempArray);
-    //console.log(tempArray);
+    console.log('Array attempt: ' + tempArray);
+    self.postMessage(tempArray);
     sorted = checkSort(tempArray);
   }
 
@@ -63,6 +62,10 @@ async function BogoSortR2(array, update, interval, finish) {
     return true;
   }
 
-  finish(tempArray);
   return tempArray;
 }
+
+self.addEventListener('message', function(list) {
+  console.log('Worker received list: ' + list);
+  BogoSortR2(list);
+}, false);
