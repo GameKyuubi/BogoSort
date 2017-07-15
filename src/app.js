@@ -1,14 +1,23 @@
-var list = [];
+var unsortedList = [];
 for(let i = 0; i < 4; i++) {
-  list.push(Math.floor(Math.random() * 1000));
+  unsortedList.push(Math.floor(Math.random() * 1000));
 }
 
-var $container = $('.container');
+var sortedList = _.sortBy(unsortedList);
 
-_.each(list, function(id) {
-  var $div = $('<div>' + id + '</div>');
-  $div.attr('id', id).addClass('number');
-  $container.append($div);
+var $unsortedContainer = $('.unsorted-container');
+var $sortedContainer = $('.sorted-container');
+
+_.each(unsortedList, function(value) {
+  var $div = $('<div>' + value + '</div>');
+  $div.attr('id', 'unsorted-' + value).addClass('unsorted-number number');
+  $unsortedContainer.append($div);
+});
+
+_.each(sortedList, function(value) {
+  var $div = $('<div>' + value + '</div>');
+  $div.attr('id', 'sorted-' + value).addClass('sorted-number number');
+  $sortedContainer.append($div);
 });
 
 console.log(list);
