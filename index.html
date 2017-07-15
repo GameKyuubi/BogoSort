@@ -5,7 +5,7 @@
 <style>
   .number {
     width: 100px;
-    height: 100px;
+    height: 40px;
     color: gray;
     background-color: purple;
     margin: 10px;
@@ -13,19 +13,28 @@
     font-size: 35px;
   }
 
+  .sorted-number {
+    height: 100px;
+  }
+
   body {
     background-color: #92778F;
   }
 
-  .container {
+  .unsorted-container {
+    display: flex;
+  }
+  .sorted-container {
     display: flex;
   }
 </style>
 </head>
 <body>
   <div class='container'>
-    <div class='unsorted-container'></div>
     <div class='sorted-container'></div>
+    <div class='trail-container'>
+      <div class='unsorted-container'></div>
+    </div>
   </div>
   <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
   <script type="text/javascript" src="bower_components/lodash/dist/lodash.js"></script>
