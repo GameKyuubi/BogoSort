@@ -20,15 +20,16 @@ _.each(sortedList, function(value) {
   $sortedContainer.append($div);
 });
 
-worker = new Worker('sort.js');
-worker.addEventListener('message', function(list) {
-  console.log('Recieved message from worker: ' + list);
+var worker = new Worker('src/sort.js');
+worker.onmessage = function(list) {
+  console.log('Recieved message from worker: ' + list.data);
   $('.unsorted-container').empty();
-  _.each(list, function(value) {
+  _.each(list.data, function(value) {
     var $div = $('<div>' + value + '</div>');
     $div.attr('id', 'unsorted-' + value).addClass('unsorted-number number');
     $unsortedContainer.append($div);
   });
-});
+};
 
+console.log(worker);
 worker.postMessage(unsortedList);

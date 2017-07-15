@@ -39,7 +39,7 @@ function BogoSortR2(array) {
     tempArray = array.slice();
     tempArray = randomize(tempArray);
     console.log('Array attempt: ' + tempArray);
-    self.postMessage(tempArray);
+    postMessage(tempArray);
     sorted = checkSort(tempArray);
   }
 
@@ -65,7 +65,8 @@ function BogoSortR2(array) {
   return tempArray;
 }
 
-self.addEventListener('message', function(list) {
-  console.log('Worker received list: ' + list);
-  BogoSortR2(list);
-}, false);
+console.log('Worker created');
+
+self.onmessage = function(list) {
+  BogoSortR2(list.data);
+};
