@@ -23,18 +23,26 @@ _.each(sortedList, function(value) {
 });
 
 var worker = new Worker('src/sort.js');
-worker.onmessage = function(list) {
-  var $container = $('<div class=\'unsorted-container container\'><div>');
-  _.each(list.data, function(value) {
-    var $div = $('<div>' + value + '</div>');
-    $div.attr('id', 'unsorted-' + value).addClass('unsorted-number number');
-    $div.css('background-color', 'rgba(0, 0, ' + value + ')');
-    $container.append($div);
-  });
-  var $trailContainer = $('.trail-container');
-  $trailContainer.prepend($container);
+worker.onmessage = function(message) {
+
+var data = message.data;
+if(message.data.hasOwnProperty('update')) {
+	var $container = $('<div class=\'unsorted-container container\'><div>');
+	_.each(message.data['update'], function(value) {
+		var $div = $('<div>' + value + '</div>');
+		$div.attr('id', 'unsorted-' + value).addClass('unsorted-number number');
+		$div.css('background-color', 'rgba(0, 0, ' + value + ')');
+				$container.append($div);
+				});
+		var $trailContainer = $('.trail-container');
+		$trailContainer.prepend($container);
+	} else {
+		yakety.pause();
+		var mail = new Audio('mail.mp3');
+		mail.play();
+	}
 };
 
-var mail = new Audio('yakety.mp3');
-mail.play();
+yakety = new Audio('yakety.mp3');
+yakety.play();
 worker.postMessage(unsortedList);

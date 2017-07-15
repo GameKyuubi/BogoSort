@@ -8,7 +8,9 @@ function BogoSortR2(array) {
     tempArray = array.slice();
     tempArray = randomize(tempArray);
     console.log('Array attempt: ' + tempArray);
-    postMessage(tempArray);
+    postMessage({
+      'update': tempArray
+    });
     sorted = checkSort(tempArray);
   }
 
@@ -38,4 +40,7 @@ console.log('Worker created');
 
 self.onmessage = function(list) {
   BogoSortR2(list.data);
+  postMessage({
+    'control': 'finished'
+  });
 };
