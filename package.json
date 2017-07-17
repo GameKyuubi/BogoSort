@@ -1,10 +1,14 @@
 {
   "name": "bogosort",
   "version": "1.0.3",
+  "dependencies": {
+    "bower": "1.8.0"
+  },
   "description": "Bogosort+visualization",
   "main": "app.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "postinstall": "bower install"
   },
   "repository": {
     "type": "git",
@@ -18,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/GameKyuubi/projects.cc1-week-2-solo/issues"
   },
-  "homepage": "https://github.com/GameKyuubi/projects.cc1-week-2-solo#readme"
+  "homepage": "https://github.com/GameKyuubi/projects.cc1-week-2-solo#readme",
+  "dependencies": {
+    "bower": "^1.8.0"
+  }
 }
