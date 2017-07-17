@@ -1,0 +1,22 @@
+{
+  "name": "bogosort",
+  "version": "1.0.3",
+  "description": "Bogosort+visualization",
+  "main": "app.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GameKyuubi/projects.cc1-week-2-solo.git"
+  },
+  "keywords": [
+    "bogosort"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GameKyuubi/projects.cc1-week-2-solo/issues"
+  },
+  "homepage": "https://github.com/GameKyuubi/projects.cc1-week-2-solo#readme"
+}
